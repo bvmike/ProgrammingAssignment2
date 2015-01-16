@@ -1,9 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The two functions before help a user to create & update a square matrix 
+## and then calculate the inverse matrix or pull it from cache if the matrix 
+## was not updated and the inverse matrix was already calculated.
 
-## Write a short comment describing this function
+## The makeCacheMatrix function is used to help de user to create, visualize 
+## and update a matrix used (x) and the corresponding inverse one (x_inv). The inverse matrix 
+## is calculated with the help of solve() available R function and it is saved in cache (different environment).
 
 makeCacheMatrix <- function(x = matrix()) {
+        
                 x_inv <- NULL
                 set <- function(y) {
                         x <<- y
@@ -19,10 +23,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The cacheSolve function is used to retrive the cached inverse matrix or 
+## calculate the inverse matrix for the first time with the solve function 
+## and store the result in cache.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        
         x_inv <- x$get_inv()
         if(!is.null(x_inv)) {
                 message("getting cached data")
